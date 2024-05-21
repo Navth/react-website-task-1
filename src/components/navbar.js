@@ -1,57 +1,81 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Button } from './Button';
 import { Link } from 'react-router-dom';
-import './navbar.css'; // Ensure this path is correct
+import './Navbar.css';
 
 function Navbar() {
-  // State to manage the icon toggle
   const [click, setClick] = useState(false);
+  const [button, setButton] = useState(true);
 
-  // Function to handle click event
-  const handleClick = () => {
-    setClick(!click);
-  };
+  const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
+  const showButton = () => {
+    if (window.innerWidth <= 960) {
+      setButton(false);
+    } else {
+      setButton(true);
+    }
+  };
+
+  useEffect(() => {
+    showButton();
+  }, []);
+
+  window.addEventListener('resize', showButton);
+
   return (
-    <nav className='navbar'>
-      
-      <div className='navbar-container'>
-        <Link to='/' className='navbar-logo'>
-          <img 
-            src={process.env.PUBLIC_URL + 'TimeCAp logo and font 1,2.png'} 
-            alt='TimeCap logo'
-            className='navbar-logo-img'
-            
-          />
-         
-        </Link>
-        <div className='menu-icon' onClick={handleClick}>
-          <img 
-            src={click ? process.env.PUBLIC_URL + '/white Cross.png' 
-                            : process.env.PUBLIC_URL + '/Menu White.png'} 
-            alt='Menu icon'
-            className='menu-icon-img'
-          />
+    <>
+      <nav className='navbar'>
+        <div className='navbar-container'>
+          <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+          <img src={process.env.PUBLIC_URL + 'TimeCAp logo and font 1,2.png'}
+            alt='Timecap logo'
+            className='navbar-logo'
+            />
+          </Link>
+          <div className='menu-icon' onClick={handleClick}>
+            <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+          </div>
+          <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+            <li className='nav-item'>
+              <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                Home
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link
+                to='/services'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                Services
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link
+                to='/products'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                Products
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                to='/sign-up'
+                className='nav-links-mobile'
+                onClick={closeMobileMenu}
+              >
+                Sign Up
+              </Link>
+            </li>
+          </ul>
+          {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
         </div>
-        <ul className={click ? '' : ''}>
-          <li className='nav-items'>
-            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-              Home
-            </Link>
-          </li>
-          <li className='nav-items'>
-            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-              Your Capsule
-            </Link>
-          </li>
-          <li className='nav-items'>
-            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-              Support
-            </Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 }
 
