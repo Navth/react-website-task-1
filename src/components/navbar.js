@@ -32,6 +32,7 @@ function Navbar() {
           <img src={process.env.PUBLIC_URL + 'TimeCAp logo and font 1,2.png'}
             alt='Timecap logo'
             className='navbar-logo'
+
             />
           </Link>
           <div className='menu-icon' onClick={handleClick}>
@@ -49,7 +50,7 @@ function Navbar() {
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                Services
+                Time Left
               </Link>
             </li>
             <li className='nav-item'>
@@ -58,7 +59,7 @@ function Navbar() {
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                Products
+                Support
               </Link>
             </li>
 

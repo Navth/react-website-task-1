@@ -8,7 +8,7 @@ function Footer() {
     <div className='footer-container'>
       <section className='footer-subscription'>
         <p className='footer-subscription-heading'>
-          Join the Adventure newsletter to receive our best vacation deals
+          Join to get updates
         </p>
         <p className='footer-subscription-text'>
           You can unsubscribe at any time.
@@ -31,7 +31,6 @@ function Footer() {
             <h2>About Us</h2>
             <Link to='/sign-up'>How it works</Link>
             <Link to='/'>Testimonials</Link>
-            <Link to='/'>Careers</Link>
             <Link to='/'>Investors</Link>
             <Link to='/'>Terms of Service</Link>
           </div>
@@ -63,12 +62,13 @@ function Footer() {
       <section class='social-media'>
         <div class='social-media-wrap'>
           <div class='footer-logo'>
-            <Link to='/' className='social-logo'>
-              TRVL
-              <i class='fab fa-typo3' />
-            </Link>
+            <img src={process.env.PUBLIC_URL + 'TimeCAp logo and font 1,2.png'}
+            alt='Timecap logo'
+            className='footer-logo'
+
+            />
           </div>
-          <small class='website-rights'>TRVL © 2020</small>
+          <small class='website-rights'>TimeCap © 2024</small>
           <div class='social-icons'>
             <Link
               class='social-icon-link facebook'
