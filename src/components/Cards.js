@@ -14,6 +14,7 @@ function Cards() {
               text='The moment when you had fun with your people'
               label='Fun'
               path='/services'
+              
             />
             <CardItem
               src='/images/img-2.jpg'
