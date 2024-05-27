@@ -1,3 +1,6 @@
+/* App.css */
+
+/* Global and common styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,6 +8,7 @@
   font-family: 'PT Sans', sans-serif;
 }
 
+/* Page section styles */
 .home,
 .services,
 .products,
@@ -16,8 +20,9 @@
   font-size: 3rem;
 }
 
-.services {
-  
+.services,
+.products,
+.sign-up {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -26,19 +31,56 @@
 }
 
 .products {
-  
-  background-position: center;
   background-size: fill;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
 }
 
-.sign-up {
-  
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
+/* Sign-up form styles */
+.sign-up-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.sign-up-form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sign-up-form h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
 }

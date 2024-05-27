@@ -1,6 +1,15 @@
 import React from 'react';
+import { Auth } from '../auth';
 import '../../App.css';
 
-export default function SignUp() {
-  return <h1 className='sign-up'>LIKE & SUBSCRIBE</h1>;
-}
+const SignUp = () => {
+  return (
+    <div className="sign-up-container">
+      <div className="auth">
+        <Auth />
+      </div>
+    </div>
+  );
+};
+
+export default SignUp;
